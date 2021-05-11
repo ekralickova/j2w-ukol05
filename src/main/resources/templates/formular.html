@@ -77,7 +77,7 @@
         <div class="error" th:if="${#fields.hasErrors('form.email')}" th:errors="${form.email}"></div>
 
         <label for="telephone" class="radek">Telefon:</label>
-        <input id="telephone" type="email" th:field="${form.telephone}"/>
+        <input id="telephone" type="tel" th:field="${form.telephone}"/>
         <div class="error" th:if="${#fields.hasErrors('form.telephone')}" th:errors="${form.telephone}"></div>
 
 

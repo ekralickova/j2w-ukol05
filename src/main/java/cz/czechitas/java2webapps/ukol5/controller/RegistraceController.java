@@ -35,12 +35,12 @@ public class RegistraceController {
         Period period = form.getDatumNarozeni().until(LocalDate.now());
         int vek = period.getYears();
 
-        if (vek < 9 || vek > 15 || form.getSport().size() <= 1) {
+        if (vek < 9 || vek > 15 || form.getSport() == null || form.getSport().size() <= 1) {
             if (vek < 9 || vek > 15) {
-                bindingResult.rejectValue("datumNarozeni", "", "To by nešlo.");
+                bindingResult.rejectValue("datumNarozeni", "", "Vek musi byt 9-15(vcetne).");
             }
-            if (form.getSport().size() <= 1) {
-                bindingResult.rejectValue("sport", "", "To by uz vubec nešlo.");
+            if (form.getSport() == null || form.getSport().size() <= 1) {
+                bindingResult.rejectValue("sport", "", "Zaskrtnute musi byt nejmene 2 sporty");
             }
             return "formular";
         }

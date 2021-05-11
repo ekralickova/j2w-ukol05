@@ -18,7 +18,6 @@ public class RegistraceForm {
     private LocalDate datumNarozeni;
     @NotNull
     private Gender gender;
-    @NotNull
     private EnumSet<Sport> sport;
     @NotNull
     private String turnus;
